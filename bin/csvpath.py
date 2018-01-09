@@ -19,8 +19,7 @@ class CSVPathCommand(EventingCommand):
             for field in fields_string.split(','):
                 conf_fields.add(field)
 
-    # XXX hardcoded field name
-    csv_field_name = '_raw'
+    csv_field_name = Option(default='_raw')
 
     def transform(self, records):
         for record in records:
